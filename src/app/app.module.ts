@@ -8,12 +8,14 @@ import { AdministracionComponent } from './components/administracion/administrac
 //import { FrontPageComponent } from './front-page/front-page.component';
 import { FrontpageComponent } from './components/frontpage/frontpage.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AdministracionComponent,
     //FrontPageComponent,
-    FrontpageComponent
+    FrontpageComponent,
+ 
   ],
   imports: [
     BrowserModule,

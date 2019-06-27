@@ -307,24 +307,24 @@
   </div>
 </section>
 
-<!-- Modal -->
-<ng-template #content let-c="close" let-d="dismiss">
+<ng-template #content let-c="close" let-d="dismiss" let modals>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Ingreso Administración</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <h4 class="modal-title" id="modal-basic-title">Iniciar Sesion</h4>
+    
+    <button type="button"  class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
 
   <div class="modal-body">
-    <form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
-      <input type="email" name="email" placeholder="Username" ngModel required>
-      <input type="password" name="password" placeholder="Password" ngModel required>
-    </form>
+   Usuario <input type="text" placeholder="Username">
+   Contraseña<input type="password" placeholder="Password" >
   </div>
 
   <div class="modal-footer">
-    <button type="submit" value="send" href="./administración.component.html" class="btn btn-outline-dark" (click)="login()">Entrar</button>
+      <button type="button" class="btn btn-outline-secondary" (click)="d('Cross click')">Cancelar</button>
+    <button type="button" href="./app.component.html" class="btn btn-light" (click)="login()"   (click)="d('Cross click')" >Entrar</button>
+    
   </div>
   
 </ng-template>

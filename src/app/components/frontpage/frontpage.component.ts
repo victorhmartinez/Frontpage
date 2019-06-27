@@ -23,15 +23,15 @@ export class FrontpageComponent implements OnInit {
   constructor(config: NgbModalConfig, private modalService: NgbModal, private router: Router) { 
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
-    config.keyboard = false;
+    config.keyboard = true;
   }
 
   ngOnInit() {
   }
   open(content) {
     this.modalService.open(content, { windowClass: 'dark-modal', size: 'sm' });
+  
   }
-
   login(){
     this.router.navigate(['/administracion']);    
   } 

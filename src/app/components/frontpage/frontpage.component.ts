@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-frontpage',
   templateUrl: './frontpage.component.html',

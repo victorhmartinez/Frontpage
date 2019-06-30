@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UserI } from '../models/user';
 import { JwtResponseI } from '../models/jwt-response';
 import { tap } from 'rxjs/operators';
@@ -10,32 +10,48 @@ import { Observable, BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class AuthService {
-  AUTH_SERVER: string = 'localhost:4200';
+  AUTH_SERVER: string = 'http://ec2-18-232-102-175.compute-1.amazonaws.com:3000';
   authSubject = new BehaviorSubject(false);
   private token: string;
 
-  constructor( private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, ) { 
+    
 
-  register(user: UserI): Observable<JwtResponseI> {
-    return this.httpClient.post<JwtResponseI>(`${this.AUTH_SERVER}/register`,
-    user).pipe(tap(
-      (res: JwtResponseI) => {
-        if (res) {
-          // guardar token
-          this.saveToken(res.dataUser.accessToken, res.dataUser.expiresIn);
-        }
-      })
-    );
   }
 
-  login(user: UserI): Observable<JwtResponseI> {
-    return this.httpClient.post<JwtResponseI>(`${this.AUTH_SERVER}/login`,
-      user).pipe(tap(
+  register(user: UserI): Observable<JwtResponseI> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      })
+    };
+
+    return this.httpClient.post<JwtResponseI>(`${this.AUTH_SERVER}/register`,
+      user, httpOptions).pipe(tap(
         (res: JwtResponseI) => {
           if (res) {
             // guardar token
-            this.saveToken(res.dataUser.accessToken, res.dataUser.expiresIn);
+            this.saveToken(res.dataUser.token);
+          }
+        })
+      );
+  }
+
+  login(user: UserI): Observable<JwtResponseI> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.httpClient.post<JwtResponseI>("http://ec2-18-232-102-175.compute-1.amazonaws.com:3000/login/user",
+      user, httpOptions).pipe(tap(
+        (res: JwtResponseI) => {
+          if (res) {
+            // guardar token
+            this.saveToken(JSON.stringify(res["token"]));
           }
         })
       );
@@ -48,9 +64,8 @@ export class AuthService {
     localStorage.removeItem("EXPIRES_IN");
   }
 
-  private saveToken(token: string, expiresIn: string): void {
+  private saveToken(token: string): void {
     localStorage.setItem("ACCESS_TOKEN", token);
-    localStorage.setItem("EXPIRES_IN", expiresIn);
     this.token = token;
   }
 
@@ -59,6 +74,6 @@ export class AuthService {
       this.token = localStorage.getItem("ACCESS_TOKEN");
     }
     return this.token;
-}
+  }
 }
 

@@ -33,6 +33,6 @@ export class FrontpageComponent implements OnInit {
   
   }
   login(){
-    this.router.navigate(['/administracion']);    
+    this.router.navigate(['/auth/login']);    
   } 
 }

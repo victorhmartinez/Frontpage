@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-administracion',
@@ -8,11 +9,15 @@ import { Router } from '@angular/router';
 })
 export class AdministracionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-
+  /*onLogout(): void {
+    this.authService.logoutUser();
+    location.reload();
+  }
+*/
 
 }

@@ -62,5 +62,9 @@ export class AuthService {
   }
 
   //Logout
+  logout():void{
+    this.token='';
+    localStorage.removeItem('ACCESS_TOKEN"');
+  }
   }
 

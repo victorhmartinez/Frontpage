@@ -6,10 +6,11 @@
 }
 
 body {
-  background-image: url(http://weloveiconfonts.com/api/?family=fontawesome);
+  
   color: #606468;
   font: 87.5%/1.5em 'Open Sans', sans-serif;
   margin: 0;
+background: url(https://www.utpl.edu.ec/eduroam/img/campus.png);
 }
 
 input {

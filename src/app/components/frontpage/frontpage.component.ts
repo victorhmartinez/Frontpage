@@ -38,16 +38,11 @@ export class FrontpageComponent implements OnInit {
     this.modalService.open(content, { windowClass: 'dark-modal', size: 'sm' });
   
   }
-<<<<<<< HEAD
-
-  
-=======
   updateListPersons() {
     this.personService.getPersons().subscribe(person => {
       this.listPersons = person;
     });
   }
->>>>>>> eb2589241ddb4f56f58d8bc9fe0627fbcc76fe84
   login(){
     this.router.navigate(['/auth/login']);    
   } 

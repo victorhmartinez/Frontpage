@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 //Services
-import { SiteService } from '../../services/site.service';
+
 import { InfoSiteService } from '../../services/infoSite.service';
 import { ItemCategoryService } from '../../services/itemCategory.service';
+import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';
 //Models
-import { Site } from '../../models/site';
 import { ItemCategory } from '../../models/itemCategory';
 import { InfoSite } from '../../models/infoSite';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
@@ -16,30 +16,31 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
   styleUrls: ['./infosite.component.css']
 })
 export class InfositeComponent implements OnInit {
-  listSites: Site[] = [];
   listItemCategories: ItemCategory[] = [];
   listInfoSites: InfoSite[] = [];
+  listItemUniversityCareer: ItemCategory[] = [];
   infoSiteForm: FormGroup;
   data:MatTableDataSource<any>;
 
   constructor(
-    private siteService: SiteService,
     private infoSiteService: InfoSiteService,
     private itemCategoryService: ItemCategoryService,
+    private universityCareerService: UnirversityCareerService
   ) {
     this.infoSiteForm = this.createFormGroup();
   }
   @ViewChild(MatPaginator) paginator: MatPaginator; 
 
-  updateListSites() {
-    this.siteService.getSite().subscribe(site => {
-      this.listSites = site;
-    });
-  }
 
   updateListItemCategories() {
     this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
       this.listItemCategories = itemCategories;
+    });
+  }
+  //Update UniversityCareer
+  updateListItemUniversityCategories() {
+    this.universityCareerService.getUniversityCareer().subscribe(itemCategories => {
+      this.listItemUniversityCareer = itemCategories;
     });
   }
   //ALL
@@ -70,26 +71,26 @@ export class InfositeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.updateListSites();
     this.updateListItemCategories();
+    this.updateListItemUniversityCategories();
     this.updateListInfoSite();
   }
-  displayedColumns: string[] = ['site_site_id', 'description', 'type_info', 'delete', 'update'];
+  displayedColumns: string[] = [ 'description', 'type_info','info_site_universitycareer', 'delete', 'update'];
 
   //Create new form
   createFormGroup() {
     return new FormGroup({
       info_site_id: new FormControl(),
-      site_site_id: new FormControl('', [
-        Validators.required,
-      ]),
       description: new FormControl('', [
         Validators.required,
         Validators.maxLength(45)
       ]),
       type_info: new FormControl('', [
         Validators.required,
-      ])
+      ]),
+      info_site_universitycareer: new FormControl('', [
+        Validators.required,
+      ]),
 
     });
   }
@@ -98,9 +99,9 @@ export class InfositeComponent implements OnInit {
   loadData(infoSiteEdit: InfoSite) {
     this.infoSiteForm.setValue({
       info_site_id: infoSiteEdit.info_site_id,
-      site_site_id: infoSiteEdit.site_site_id,
       description: infoSiteEdit.description,
-      type_info: infoSiteEdit.type_info
+      type_info: infoSiteEdit.type_info,
+      info_site_universitycareer:infoSiteEdit.info_site_universitycareer
     })
   }
 

@@ -15,7 +15,6 @@ import { PersonDepartamentComponent } from './components/person-departament/pers
 import { ContentComponent } from './components/content/content.component';
 import { ContentMediaComponent } from './components/content-media/content-media.component';
 import { ContentInfoComponent } from './components/content-info/content-info.component';
-import { SiteComponent } from './components/site/site.component';
 import { InfositeComponent } from './components/infosite/infosite.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SubmenuComponent } from './components/submenu/submenu.component';
@@ -45,7 +44,6 @@ const routes: Routes = [
     { path: 'content', component: ContentComponent },
     { path: 'contentMedia', component: ContentMediaComponent },
     { path: 'contentInfo', component: ContentInfoComponent },
-    { path: 'site', component: SiteComponent },
     { path: 'infosite', component: InfositeComponent },
     { path: 'menu', component: MenuComponent },
     { path: 'subMenu', component: SubmenuComponent },

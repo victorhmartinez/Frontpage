@@ -73,12 +73,16 @@ export class PersoncontactsComponent implements OnInit {
     this.updateListPersonsContact();
   }
   //columns table
-  displayedColumns: string[] = ['person', 'itemCategory', 'delete', 'update'];
+  displayedColumns: string[] = ['contact','person', 'itemCategory', 'delete', 'update'];
 //FormGroup
   createFormGroup() {
     return new FormGroup({
 
       contact_info_id: new FormControl(),
+      contact:new FormControl('', [
+        Validators.required,
+        Validators.maxLength(255)
+      ]),
       persons_id: new FormControl('', [
         Validators.required,
       ]),
@@ -91,6 +95,7 @@ export class PersoncontactsComponent implements OnInit {
    loadData(personsContactEdit: Personcontacts) {
     this.personsContactform.setValue({
       contact_info_id: personsContactEdit.contact_info_id,
+      contact:personsContactEdit.contact,
       persons_id : personsContactEdit.persons_id,
       item_category_id: personsContactEdit.item_category_id,
 

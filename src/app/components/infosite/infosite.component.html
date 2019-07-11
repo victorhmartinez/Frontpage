@@ -5,15 +5,6 @@
       <mat-card-content>
 
         <mat-form-field class="w100">
-          <mat-label>Sitios</mat-label>
-          <mat-select formControlName="site_site_id">
-            <mat-option [value]="site.site_id" *ngFor="let site of listSites">
-              {{site.title}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <mat-form-field class="w100">
           <input matInput formControlName="description" placeholder="Descripcion" autocomplete="off">
         </mat-form-field>
 
@@ -23,6 +14,15 @@
             <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemCategories">
               {{itemCategory.nameItemCategory}}
             </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="w100">
+          <mat-label>Titulo Academico</mat-label>
+          <mat-select formControlName="info_site_universitycareer">
+              <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemUniversityCareer">
+                  {{itemCategory.nameItemCategory}}
+              </mat-option>
           </mat-select>
         </mat-form-field>
 
@@ -42,11 +42,6 @@
     <mat-table [dataSource]="data" class="w100" cols="3">
     
 
-      <ng-container matColumnDef="site_site_id">
-        <mat-header-cell *matHeaderCellDef>Sitio</mat-header-cell>
-        <mat-cell *matCellDef="let infoSite"> {{infoSite.site_site_id}} </mat-cell>
-      </ng-container>
-
       <ng-container matColumnDef="description">
         <mat-header-cell *matHeaderCellDef>Descripcion</mat-header-cell>
         <mat-cell *matCellDef="let infoSite"> {{infoSite.description}} </mat-cell>
@@ -55,6 +50,11 @@
       <ng-container matColumnDef="type_info">
         <mat-header-cell *matHeaderCellDef> Categoria </mat-header-cell>
         <mat-cell *matCellDef="let infoSite">{{infoSite.type_info}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="info_site_universitycareer">
+        <mat-header-cell *matHeaderCellDef> Titulación </mat-header-cell>
+        <mat-cell *matCellDef="let infoSite">{{infoSite.info_site_universitycareer}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="delete">

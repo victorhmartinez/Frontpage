@@ -18,7 +18,7 @@ import { ContentInfoComponent } from './components/content-info/content-info.com
 import { SiteComponent } from './components/site/site.component';
 import { InfositeComponent } from './components/infosite/infosite.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { SubmenuComponent } from './components/submenu/submenu.component';
+
 import { SubjectMatterComponent } from './components/subject-matter/subject-matter.component';
 import { PreRequirementsComponent } from './components/pre-requirements/pre-requirements.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
@@ -48,7 +48,7 @@ const routes: Routes = [
     { path: 'site', component: SiteComponent },
     { path: 'infosite', component: InfositeComponent },
     { path: 'menu', component: MenuComponent },
-    { path: 'subMenu', component: SubmenuComponent },
+   
     { path: 'subjectMatter', component: SubjectMatterComponent },
     { path: 'preRequirements', component: PreRequirementsComponent },
   ]

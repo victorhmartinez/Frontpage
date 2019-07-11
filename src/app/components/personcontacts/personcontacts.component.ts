@@ -7,6 +7,7 @@ import { PersonService } from 'src/app/services/person.service';
 import { ItemCategoryService } from 'src/app/services/itemCategory.service';
 import { Personcontacts } from 'src/app/models/personcontacts';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
+import { UnirversityCareerService } from 'src/app/services/unirversity-career.service';
 
 @Component({
   selector: 'app-personcontacts',
@@ -15,14 +16,14 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
 })
 export class PersoncontactsComponent implements OnInit {
   listPersons: Person[] = [];
-  listItemCategories: ItemCategory[] = [];
+  listTypeContact: ItemCategory[] = [];
   listPersonsContact: Personcontacts [] = [];
   personsContactform: FormGroup;
   data:MatTableDataSource<any>;
   constructor(
     private personsContactService: PersoncontactsService ,
     private personService: PersonService,
-    private itemCategoryService: ItemCategoryService,
+    private universityCareerService: UnirversityCareerService,
   ) { 
     this.personsContactform = this.createFormGroup();
   }
@@ -33,9 +34,9 @@ export class PersoncontactsComponent implements OnInit {
       this.listPersons = person;
     });
   }
-  updateListItemCategories() {
-    this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
-      this.listItemCategories = itemCategories;
+  updateListTypeContact() {
+    this.universityCareerService.getTypeContact().subscribe(itemCategories => {
+      this.listTypeContact = itemCategories;
     });
   }
   //all person,itemcategories,contacts
@@ -69,11 +70,11 @@ export class PersoncontactsComponent implements OnInit {
   }
   ngOnInit() {
     this.updateListPersons();
-    this.updateListItemCategories();
+    this.updateListTypeContact();
     this.updateListPersonsContact();
   }
   //columns table
-  displayedColumns: string[] = ['person', 'itemCategory', 'delete', 'update'];
+  displayedColumns: string[] = ['person', 'itemCategory','contact', 'delete', 'update'];
 //FormGroup
   createFormGroup() {
     return new FormGroup({
@@ -85,6 +86,9 @@ export class PersoncontactsComponent implements OnInit {
       item_category_id: new FormControl('', [
         Validators.required,
       ]),
+      contact: new FormControl('', [
+        Validators.required,
+      ]),
     });
   }
    //Load data in form
@@ -93,7 +97,7 @@ export class PersoncontactsComponent implements OnInit {
       contact_info_id: personsContactEdit.contact_info_id,
       persons_id : personsContactEdit.persons_id,
       item_category_id: personsContactEdit.item_category_id,
-
+      contact:personsContactEdit.contact
     })
   }
     //submit form

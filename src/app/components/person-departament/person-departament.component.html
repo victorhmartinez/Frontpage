@@ -15,15 +15,15 @@
 
 
               <mat-form-field class="w100">
-                  <mat-label>Categorias</mat-label>
+                  <mat-label>Departamento</mat-label>
                   <mat-select formControlName="item_category_id">
-                      <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemCategories">
+                      <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of  listItemDepartments">
                           {{itemCategory.nameItemCategory}}
                       </mat-option>
                   </mat-select>
               </mat-form-field>
               <mat-form-field class="w100">
-                <mat-label>Titulo Academico</mat-label>
+                <mat-label>Titulación</mat-label>
                 <mat-select formControlName="universitycareer">
                     <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listItemUniversityCareer">
                         {{itemCategory.nameItemCategory}}
@@ -48,8 +48,8 @@
           <mat-cell *matCellDef="let persondepartament"> {{persondepartament.persons_id}} </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="itemCategory">
-          <mat-header-cell *matHeaderCellDef> Rol </mat-header-cell>
+        <ng-container matColumnDef="department">
+          <mat-header-cell *matHeaderCellDef> Departamento </mat-header-cell>
           <mat-cell *matCellDef="let persondepartament">{{persondepartament.item_category_id}} </mat-cell>
         </ng-container>
 

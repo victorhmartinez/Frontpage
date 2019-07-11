@@ -16,7 +16,7 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
 })
 export class PersonDepartamentComponent implements OnInit {
   listPersons: Person[] = [];
-  listItemCategories: ItemCategory[] = [];
+  listItemDepartments: ItemCategory[] = [];
   listPersonsDepartament: PersonDepartament [] = [];
   listItemUniversityCareer: ItemCategory[] = [];
   personsDepartamentform: FormGroup;
@@ -24,7 +24,7 @@ export class PersonDepartamentComponent implements OnInit {
   constructor(
     private personsDepartamentService: PersonDepartamentService ,
     private personService: PersonService,
-    private itemCategoryService: ItemCategoryService,
+  
     private universityCareerService: UnirversityCareerService
   ) { 
     this.personsDepartamentform = this.createFormGroup();
@@ -37,9 +37,9 @@ export class PersonDepartamentComponent implements OnInit {
       });
     }
 
-    updateListItemCategories() {
-      this.itemCategoryService.getItemCategories().subscribe(itemCategories => {
-        this.listItemCategories = itemCategories;
+    updateListDepartments() {
+      this.universityCareerService.getDepartments().subscribe(itemCategories => {
+        this. listItemDepartments = itemCategories;
       });
     }
     //Update UniversityCareer
@@ -79,12 +79,12 @@ updatePersonsDepartment(id: number) {
 }
   ngOnInit() {
     this.updateListPersons();
-    this.updateListItemCategories();
+    this.updateListDepartments();
     this.updateListItemUniversityCategories();
     this.updateListPersonsDepartament();
   }
   //columns table
-  displayedColumns: string[] = ['person', 'itemCategory','universityCareer', 'delete', 'update'];
+  displayedColumns: string[] = ['person', 'department','universityCareer', 'delete', 'update'];
 //FormGroup
   createFormGroup() {
     return new FormGroup({

@@ -7,12 +7,13 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './administracion.component.html',
   styleUrls: ['./administracion.component.css']
 })
-export class AdministracionComponent {
+export class AdministracionComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
 
-
+  ngOnInit() {
+  }
   title = 'AngularMaterialGettingStarted';
 
   isMenuOpen = true;
@@ -35,5 +36,10 @@ export class AdministracionComponent {
   // sidenavEvents(str) {
   //   console.log(str);
 // }
+logout(){
+  localStorage.removeItem('ACCESS_TOKEN"');
+  this.router.navigateByUrl('/auth/login');
+ 
+}
 
 }

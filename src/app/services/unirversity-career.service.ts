@@ -19,6 +19,12 @@ export class UnirversityCareerService {
   constructor(private httpClient: HttpClient,) {
     this.apiUrl = environment.apiUrl;
    }
+   public getTypeContact(){
+    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'itemcategoryTypeContact/', this.httpOptions);
+   }
+   public getDepartments(){
+    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'itemcategoryDepartaments/', this.httpOptions);
+   }
    public getUniversityCareer() { 
     return this.httpClient.get<ItemCategory[]>(this.apiUrl+'itemcategoryTitulacion/', this.httpOptions);
   }

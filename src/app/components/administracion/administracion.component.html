@@ -9,7 +9,7 @@
     <mat-icon class="toolbar-icon" matBadge="8" matBadgePosition="after" matBadgeColor="accent">notifications</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/frontpage">
+    <button mat-menu-item (click)="logout()">
       <mat-icon>assignment_return</mat-icon>
       <span>Cerrar Sesion</span>
     </button>
@@ -113,15 +113,7 @@
           <mat-icon>menu</mat-icon>
           Menu
         </button>
-      </mat-list-item>
-
-      <mat-list-item>
-          <button class="menu-item" mat-flat-button routerLink="subMenu">
-            <mat-icon>subject</mat-icon>
-            SubMenu
-          </button>
-        </mat-list-item>
-      
+      </mat-list-item>     
          <!--Subject Matter-->
       <mat-list-item>
         <button class="menu-item" mat-flat-button routerLink="subjectMatter">

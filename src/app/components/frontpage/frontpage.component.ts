@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { PersonService } from 'src/app/services/person.service';
+import { Person } from 'src/app/models/person';
 
 @Component({
   selector: 'app-frontpage',
@@ -19,8 +21,9 @@ import { Router } from '@angular/router';
   `]
 })
 export class FrontpageComponent implements OnInit {
-
-  constructor(config: NgbModalConfig, private modalService: NgbModal, private router: Router) { 
+  listPersons: Person[] = [];
+  constructor(config: NgbModalConfig, private modalService: NgbModal, private router: Router ,
+      private personService: PersonService,) { 
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = true;
@@ -28,14 +31,23 @@ export class FrontpageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.updateListPersons();
   }
 
   open(content) {
     this.modalService.open(content, { windowClass: 'dark-modal', size: 'sm' });
   
   }
+<<<<<<< HEAD
 
   
+=======
+  updateListPersons() {
+    this.personService.getPersons().subscribe(person => {
+      this.listPersons = person;
+    });
+  }
+>>>>>>> eb2589241ddb4f56f58d8bc9fe0627fbcc76fe84
   login(){
     this.router.navigate(['/auth/login']);    
   } 

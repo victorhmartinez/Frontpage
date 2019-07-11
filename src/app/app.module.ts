@@ -27,7 +27,7 @@ import { ContentComponent } from './components/content/content.component';
 import { ContentMediaComponent } from './components/content-media/content-media.component';
 import { ContentInfoComponent } from './components/content-info/content-info.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { SubmenuComponent } from './components/submenu/submenu.component';
+
 import { InfositeComponent } from './components/infosite/infosite.component';
 import { SubjectMatterComponent } from './components/subject-matter/subject-matter.component';
 import { PreRequirementsComponent } from './components/pre-requirements/pre-requirements.component';
@@ -56,7 +56,7 @@ import { MatMenuModule} from '@angular/material/menu';
     ContentMediaComponent,
     ContentInfoComponent,
     MenuComponent,
-    SubmenuComponent,
+ 
     InfositeComponent,
     SubjectMatterComponent,
     PreRequirementsComponent,

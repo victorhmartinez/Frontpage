@@ -6,13 +6,14 @@
 }
 
 body {
-  
+  margin-left: 80px;
   color: #606468;
-  font: 87.5%/1.5em 'Open Sans', sans-serif;
- 
-  background-image: url(https://www.utpl.edu.ec/eduroam/img/campus.png);
+  font-family: Roboto, Arial, sans-serif;
+  background-image: url(https://www.utpl.edu.ec/eduroam/img/campus.png)  ;
+  width: 1100px; height: 665px;
+  background-size: auto 100%;
 }
-
+.bg-gris { background-color: rgb(222, 226, 228) !important; }
 input {
   border: none;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -26,9 +27,10 @@ p {
   line-height: 1.5em;
   color: rgb(216, 208, 208);
   align-items: center;
-  font-style: inherit;
   font-size: 29px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family:  'FontAwesome', sans-serif;
+  margin-left: 30px;
+  font-weight: bold;
 }
 
 after { clear: both; }
@@ -36,6 +38,7 @@ after { clear: both; }
 #login {
   margin: 50px auto;
   width: 320px;
+  height: 430px;
 }
 
 #login form {
@@ -94,3 +97,17 @@ after { clear: both; }
 #login form input[type="submit"]:hover {
   background: #6b2c31;
 }
+
+.navbar { padding: 15px 15px; }
+
+.navbar-nav .active {
+  background-color: #FDCB14;
+}
+
+.nav-link {
+  font-weight: 700;
+  border: 2px solid #fff;
+}
+
+.nav-link:hover { border: 2px solid #f5f5f5; }
+.linea { height: 3px; }

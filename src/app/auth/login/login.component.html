@@ -40,8 +40,10 @@
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-secondary">Cancelar</button>
 </div>-->
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+<div class="bg-gris">
+  <body>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-white ">
     <div class="d-flex mx-auto mt-md-4">
       <a class="navbar-brand" routerLink="/frontpage">Logo</a>
       <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -50,7 +52,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-          <li class="nav-item active mr-2">
+          <li class="nav-item mr-2">
             <a class="nav-link py-2 px-4"  routerLink="/frontpage" >Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item mr-2">
@@ -62,13 +64,13 @@
           <li class="nav-item mr-2">
             <a class="nav-link py-2 px-4" routerLink="/frontpage" tabindex="-1" aria-disabled="true">Autoridades</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mr-2">
             <a class="nav-link py-2 px-4" routerLink="/frontpage" tabindex="-1" aria-disabled="true">Testimonios</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mr-2">
             <a class="nav-link py-2 px-4" routerLink="/frontpage" tabindex="-1" aria-disabled="true">Contáctos</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active mr-2">
             <a class="nav-link py-2 px-4" (click)="login()"   tabindex="-1" aria-disabled="true" >Login</a>
           </li>
         </ul>
@@ -79,13 +81,14 @@
   <img src="" class="img-fluid"
     style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
   <form name='form-login' form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
-    <p>Ingreso Sistema</p>
+    <p class="titulo">Ingreso Sistema</p>
     <span class="fontawesome-user"></span>
-    <input type="text" id="user" name="dni" placeholder="Username" ngModel required>
+    <input type="text" id="user" name="username" placeholder="Username" ngModel required>
     <span class="fontawesome-lock"></span>
-    <input type="password" name="pass" placeholder="Password" ngModel required>
+    <input type="password" name="password" placeholder="Password" ngModel required>
     <input type="submit" value="Login" >
   </form>
   </div>
 
 </body>
+</div>

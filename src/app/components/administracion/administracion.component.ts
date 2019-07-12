@@ -37,7 +37,8 @@ export class AdministracionComponent implements OnInit {
   //   console.log(str);
 // }
 logout(){
-  localStorage.removeItem('ACCESS_TOKEN"');
+  localStorage.removeItem('ACCESS_TOKEN');
+  localStorage.removeItem('currentUser');
   this.router.navigateByUrl('/auth/login');
  
 }

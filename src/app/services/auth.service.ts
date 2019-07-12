@@ -15,7 +15,7 @@ import { isNullOrUndefined } from 'util';
 
 
 export class AuthService {
-  AUTH_SERVER: string = 'http://ec2-18-232-102-175.compute-1.amazonaws.com:3000';
+  AUTH_SERVER: string = 'http://127.0.0.1:8000';
   authSubject = new BehaviorSubject(false);
   private token: string;
 
@@ -28,7 +28,7 @@ export class AuthService {
 
   //Token
   login(user: UserI): Observable<JwtResponseI> {
-    return this.httpClient.post<JwtResponseI>("http://ec2-18-232-102-175.compute-1.amazonaws.com:3000/login/user",
+    return this.httpClient.post<JwtResponseI>("http://127.0.0.1:8000/api-token-auth/",
       user).pipe(tap(
         (res: JwtResponseI) => {
           if (res) {

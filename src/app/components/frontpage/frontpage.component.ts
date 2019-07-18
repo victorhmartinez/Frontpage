@@ -4,6 +4,10 @@ import { Router } from '@angular/router';
 import { PersonService } from 'src/app/services/person.service';
 import { AuthService } from '../../services/auth.service';
 import { Person } from 'src/app/models/person';
+import { InfoSite } from 'src/app/models/infoSite';
+import { Menu } from 'src/app/models/menu';
+import { DataFrontpageService } from 'src/app/services/data-frontpage.service';
+import { MenuService } from 'src/app/services/menu.service';
 @Component({
   selector: 'app-frontpage',
   templateUrl: './frontpage.component.html',
@@ -22,8 +26,12 @@ import { Person } from 'src/app/models/person';
 })
 export class FrontpageComponent implements OnInit {
   listPersons: Person[] = [];
+  listInfoSitesQuienesSomos: InfoSite [] = [];
+  listMenu: Menu[] = [];
   constructor(config: NgbModalConfig, private modalService: NgbModal, private router: Router ,
-    private authService: AuthService,  private personService: PersonService,) { 
+    private authService: AuthService,
+      private personService: PersonService,  private menuService: MenuService,
+      private frontPageDataService : DataFrontpageService,) { 
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = true;
@@ -34,6 +42,8 @@ export class FrontpageComponent implements OnInit {
 
   ngOnInit() {
     this.updateListPersons();
+    this.updateListInfoSiteQuienesSomos();
+    this.updateListMenu();
   }
 
   onLogin(form): void {
@@ -54,6 +64,25 @@ export class FrontpageComponent implements OnInit {
     this.personService.getPersons().subscribe(person => {
       this.listPersons = person;
     });
+  }
+  updateListInfoSiteQuienesSomos() {
+    this.frontPageDataService.getDataQuienesSomos().subscribe(infosite => {
+      this. listInfoSitesQuienesSomos = infosite
+    
+    },
+      error => {
+        alert(JSON.stringify(error));
+      }
+    );
+  }
+  updateListMenu() {
+    this.menuService.getMenu().subscribe(menu => {
+      this.listMenu = menu;
+    },
+      error => {
+        alert(JSON.stringify(error));
+      }
+    );
   }
   login(){
     this.router.navigate(['/auth/login']);    

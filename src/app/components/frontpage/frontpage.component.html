@@ -2,14 +2,14 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="d-flex mx-auto mt-md-4">
     <a class="navbar-brand" routerLink="/frontpage">Logo</a>
-    <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarSupportedContent"
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item active mr-2">
-          <a class="nav-link py-2 px-4"  routerLink="/frontpage" >Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link py-2 px-4" routerLink="/frontpage">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item mr-2">
           <a class="nav-link py-2 px-4" routerLink="/frontpage">Eventos</a>
@@ -27,46 +27,50 @@
           <a class="nav-link py-2 px-4" routerLink="/frontpage" tabindex="-1" aria-disabled="true">Contáctos</a>
         </li>
         <li class="nav-item mr-2">
-          <a class="nav-link py-2 px-4" (click)="login()"   tabindex="-1" aria-disabled="true" >Login</a>
+          <a class="nav-link py-2 px-4" (click)="open(content)" tabindex="-1" aria-disabled="true">Login</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
- <!-- slider eventos y noticias  (click)="open(content)" -->
- <div class="container-fluid">
+<!-- slider eventos y noticias  (click)="open(content)" -->
+<div class="container-fluid">
   <div class="row">
     <div class="col-12 col-md-8 col-lg-9 pl-0 pr-0 pr-md-3">
       <section class="eventos swiper-container" id="animacion">
         <!--Imageness-->
         <div class="swiper-wrapper">
-         <!--CAROUSEL bootstrap-->
-         <ngb-carousel >
-          <ng-template ngbSlide>
-         <img src="https://www.fundaciontelefonica.com.ar/wp-content/uploads/2018/09/programming-1024x547.jpg" alt="code-coding-computer-574071"/>
-            <div class="carousel-caption">
-              <h2>Hola este es un mensaje</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Magnam accusamus veniam excepturi aliquid unde, vitae nostrum, vel. Ipsum, accusantium, dicta!.</p>
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-            <img src="http://www.aprende-facilmente.com/wp-content/uploads/2016/11/angularjs-logo-1024x547.png" alt="Random second slide">
-            <div class="carousel-caption">
-              <h2>Hola este es un mensaje 2</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Magnam accusamus veniam excepturi aliquid unde, vitae nostrum, vel. Ipsum, accusantium, dicta!</p>
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-            <img src="https://unioninformatica.org/wp-content/uploads/2017/02/plataformas-aprender-estudiar-union-informatica-1024x547.jpg" alt="Random third slide"/>
-            <div class="carousel-caption">
-              <h3>Hola este es un mensaje 3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Magnam accusamus veniam excepturi aliquid unde, vitae nostrum, vel. Ipsum, accusantium, dicta!</p>
-            </div>
-          </ng-template>
-        </ngb-carousel>
+          <!--CAROUSEL bootstrap-->
+          <ngb-carousel>
+            <ng-template ngbSlide>
+              <img src="https://www.fundaciontelefonica.com.ar/wp-content/uploads/2018/09/programming-1024x547.jpg"
+                alt="code-coding-computer-574071" />
+              <div class="carousel-caption">
+                <h2>Hola este es un mensaje</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Magnam accusamus veniam excepturi aliquid unde, vitae nostrum, vel. Ipsum, accusantium, dicta!.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img src="http://www.aprende-facilmente.com/wp-content/uploads/2016/11/angularjs-logo-1024x547.png"
+                alt="Random second slide">
+              <div class="carousel-caption">
+                <h2>Hola este es un mensaje 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Magnam accusamus veniam excepturi aliquid unde, vitae nostrum, vel. Ipsum, accusantium, dicta!</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img
+                src="https://unioninformatica.org/wp-content/uploads/2017/02/plataformas-aprender-estudiar-union-informatica-1024x547.jpg"
+                alt="Random third slide" />
+              <div class="carousel-caption">
+                <h3>Hola este es un mensaje 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Magnam accusamus veniam excepturi aliquid unde, vitae nostrum, vel. Ipsum, accusantium, dicta!</p>
+              </div>
+            </ng-template>
+          </ngb-carousel>
         </div>
         <!--<div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>-->
@@ -186,28 +190,29 @@
 
 
 
-<section id="autoridades" >
+<section id="autoridades">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-11 mx-auto" >
+      <div class="col-md-11 mx-auto">
         <h2 class="titulo titulo-autoridades">Autoridades</h2>
         <div class="row">
           <div class="col-md-12 box-autoridades bg-light">
             <div class="row">
               <div class="col-md-3 box-autoridad" *ngFor="let person of listPersons">
                 <div class="card-autoridad bg-white">
-                  <div class="box-autoridad-cabecera text-center" >
-                    <img id="auto1" >
+                  <div class="box-autoridad-cabecera text-center">
+                    <img id="auto1">
                   </div>
                   <hr class="bg-warning w-25">
                   <div class="box-autoridad-cuerpo text-center">
-                    <p class="mb-0">ING. {{person.first_name}} {{person.second_name}} {{person.first_last_name}} {{person.second_last_name}}</p>
+                    <p class="mb-0">ING. {{person.first_name}} {{person.second_name}} {{person.first_last_name}}
+                      {{person.second_last_name}}</p>
                     <p class="mb-0">PROJECT MANAGER</p>
                     <p class="mb-0 text-warning">acabrera@utpl.edu.ec</p>
                   </div>
                 </div>
               </div>
-                <!--
+              <!--
 
              
               <div class="col-md-3 box-autoridad">
@@ -249,6 +254,7 @@
                   </div>
                 </div>
               </div>
+              class="modal-title" id="modal-basic-title"
                  -->
 
             </div>
@@ -314,25 +320,23 @@
 
 <ng-template #content let-c="close" let-d="dismiss" let modals>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Iniciar Sesion</h4>
-    
-    <button type="button"  class="close" aria-label="Close" (click)="d('Cross click')">
+    <h4 class="titulo">Iniciar Sesión</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-
-  <div class="modal-body">
-   Usuario <input type="text" placeholder="Username">
-   Contraseña<input type="password" placeholder="Password" >
-  </div>
-
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="d('Cross click')">Cancelar</button>
-    <button type="button" href="./app.component.html" class="btn btn-light" (click)="login()"   (click)="d('Cross click')" >Entrar</button>
-    
-  </div>
-  
+  <div id="login">
+  <form name='form-login' form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)" >
+    <div class="modal-body">
+      <span class="fontawesome-user"></span>
+      <input type="text" name="username" placeholder="Usuario" ngModel required><br>
+      <span class="fontawesome-lock"></span>
+      <input type="password" name="password" placeholder="Contraseña" ngModel required>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="d('Cross click')">Cancelar</button>
+      <input type="submit" class="btn btn-primary"  value="Login">
+    </div>
+  </form>
+</div>
 </ng-template>
-
-
-

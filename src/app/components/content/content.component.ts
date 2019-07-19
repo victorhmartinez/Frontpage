@@ -93,7 +93,7 @@ updateContent(id: number) {
       ]),
       description: new FormControl('', [
         Validators.required,
-        Validators.maxLength(45)
+        Validators.maxLength(255)
       ]),
 
       type_event: new FormControl('', [

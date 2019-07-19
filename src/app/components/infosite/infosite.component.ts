@@ -83,7 +83,7 @@ export class InfositeComponent implements OnInit {
       info_site_id: new FormControl(),
       description: new FormControl('', [
         Validators.required,
-        Validators.maxLength(45)
+        Validators.maxLength(500)
       ]),
       type_info: new FormControl('', [
         Validators.required,

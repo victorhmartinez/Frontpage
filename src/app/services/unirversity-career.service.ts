@@ -23,7 +23,7 @@ export class UnirversityCareerService {
     return this.httpClient.get<ItemCategory[]>(this.apiUrl+'itemcategoryTypeContact/', this.httpOptions);
    }
    public getDepartments(){
-    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'itemcategoryDepartaments/', this.httpOptions);
+    return this.httpClient.get<ItemCategory[]>(this.apiUrl+'itemcategorySecciones/', this.httpOptions);
    }
    public getUniversityCareer() { 
     return this.httpClient.get<ItemCategory[]>(this.apiUrl+'itemcategoryTitulacion/', this.httpOptions);

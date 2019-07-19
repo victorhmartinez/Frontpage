@@ -4,9 +4,7 @@
       <mat-card-title>Contacto Personas</mat-card-title>
       <mat-card-content>
 
-        <mat-form-field class="w100">
-          <input matInput formControlName="contact" placeholder="Contacto" autocomplete="off">
-        </mat-form-field>
+      
 
         <mat-form-field class="w100">
           <mat-label>Nombre Personas</mat-label>
@@ -19,7 +17,7 @@
 
 
         <mat-form-field class="w100">
-          <mat-label>Categorias</mat-label>
+          <mat-label>Tipo de contacto</mat-label>
           <mat-select formControlName="item_category_id">
             <mat-option [value]="itemCategory.idItemCategory" *ngFor="let itemCategory of listTypeContact">
               {{itemCategory.nameItemCategory}}
@@ -27,7 +25,9 @@
           </mat-select>
         </mat-form-field>
 
-
+        <mat-form-field class="w100">
+          <input matInput formControlName="contact" placeholder="Contacto" autocomplete="off">
+        </mat-form-field>
 
       </mat-card-content>
       <mat-card-actions>
@@ -52,7 +52,7 @@
       </ng-container>
 
       <ng-container matColumnDef="itemCategory">
-        <mat-header-cell *matHeaderCellDef> Rol </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> Tipo de contacto </mat-header-cell>
         <mat-cell *matCellDef="let personcontacts">{{personcontacts.item_category_id}} </mat-cell>
       </ng-container>
 

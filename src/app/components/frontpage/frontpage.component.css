@@ -1,10 +1,3 @@
-@charset "utf-8";
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
-
 body { font-family: 'PT Sans', sans-serif; }
 
 .bg-primary { background-color: #003F72 !important; }
@@ -135,6 +128,12 @@ body { font-family: 'PT Sans', sans-serif; }
   padding: 10px 40px;
   border-radius: 0%;
 }
+.btn-autoridad {
+  margin-top: 80px;
+  padding: 10px 40px;
+  border-radius: 0%;
+  display:inline-block;
+}
 
 .box-autoridad {
   margin-top: 30px;
@@ -181,68 +180,4 @@ body { font-family: 'PT Sans', sans-serif; }
   .box-evento {
     height: 36px;
   }
-}
-
-
-.titulo{
-  line-height: 1.5em;
-  color: rgb(216, 208, 208);
-  align-items: center;
-  font-size: 25px;
-  font-family: 'PT Sans', sans-serif;;
-  margin-left: 30px;
-  font-weight: bold;
-}
-#login form {
-  margin: auto;
-  padding: 22px 22px 22px 22px;
-  width: 100%;
-  border-radius: 5px;
-  background: #314252;
-  border-top: 3px solid #434a52;
-  border-bottom: 3px solid #434a52;
-}
-#login form span {
-  background-color: #363b41;
-  border-radius: 3px 0px 0px 3px;
-  border-right: 3px solid #434a52;
-  color: #606468;
-  display: block;
-  float: left;
-  line-height: 50px;
-  text-align: center;
-  width: 40px;
-  height: 45px;
-}
-#login form input[type="text"] {
-  background-color: #cbccc1;
-  border-radius: 0px 3px 3px 0px;
-  color: #3a3636;
-  margin-bottom: 1em;
-  padding: 0 16px;
-  width: 180px;
-  height: 45px;
-}
-
-#login form input[type="password"] {
-  background-color: #cbccc1;
-  border-radius: 0px 3px 3px 0px;
-  color: #3a3636;
-  margin-bottom: 1em;
-  padding: 0 16px;
-  width: 180px;
-  height: 45px;
-}
-#login form input[type="submit"] {
-  background: #4a6688;
-  border: 0;
-  width: 100%;
-  height: 40px;
-  border-radius: 3px;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
-}
-#login form input[type="submit"]:hover {
-  background: #6b2c31;
 }

@@ -29,7 +29,7 @@ const routes: Routes = [
   
   { path: '', component: FrontpageComponent, pathMatch: 'full',},
  // { path: '', redirectTo: '/frontpage', pathMatch: 'full' },
-  { path: 'frontpage', component: FrontpageComponent },
+  { path: 'isic', component: FrontpageComponent },
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },  
   
   { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard]

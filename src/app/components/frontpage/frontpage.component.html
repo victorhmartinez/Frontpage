@@ -235,27 +235,30 @@
    
   </div>
 </section>
-
 <ng-template #content let-c="close" let-d="dismiss" let modals>
   <div id="login">
-    <form name='form-login' form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
-      <div class="modal-header">
-        <h4 class="tituloM">Iniciar Sesión</h4>
-        <!--<button class="buton1"  class="close" aria-label="Close" (click)="d('Cross click')">
-          <span aria-hidden="true">&times;</span>
-        </button>-->
-      </div>
+    <div class="col-sm-11 main-section text-center">
+      <div class="modal-content">
+        <div class="col-12 user-img">
+          <img id="log1" />
 
-      <div class="modal-body">
-        <span class="fontawesome-user"></span>
-        <input type="text" name="username" placeholder="Usuario" ngModel required><br>
-        <span class="fontawesome-lock"></span>
-        <input type="password" name="password" placeholder="Contraseña" ngModel required>
+        </div>
+        <form class="col-12" method="get" name='form-login' form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
+          <div class="form-group" id="user-group">
+            <input type="text" class="form-control" placeholder="Nombre de usuario" name="username" ngModel required />
+          </div>
+          <div class="form-group" id="contrasena-group">
+            <input type="password" class="form-control" placeholder="Contraseña" name="password" ngModel required />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" (click)="d('Cross click')">Cancelar</button>
+            <input type="submit" class="btn btn-primary" value="Login">
+          </div>
+        </form>
+        <div class="col-12 forgot">
+          <a href="#">Recordar contrasena?</a>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" (click)="d('Cross click')">Cancelar</button>
-        <input type="submit" class="btn btn-primary" value="Login">
-      </div>
-    </form>
+    </div>
   </div>
 </ng-template>

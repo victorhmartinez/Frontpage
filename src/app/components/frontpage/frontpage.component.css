@@ -1,5 +1,7 @@
 @charset "utf-8";
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(https://use.fontawesome.com/releases/v5.0.8/css/solid.css);
+
+@import url(https://use.fontawesome.com/releases/v5.0.7/js/all.js);
 
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
@@ -154,6 +156,14 @@ body { font-family: 'PT Sans', sans-serif; }
       text-align: left;
     }
 
+    #log1 { background-image: url('../../../../images/user.png'); 
+      width:115px;
+      height:119px;
+      background-position: center center;
+      background-size: cover;
+      text-align: left;
+    }
+
 #auto2 { background-image: url('../../../../images/BT_20171021_JLRC21_3136580.jpg'); 
   width:115px;
   height:119px;
@@ -189,58 +199,59 @@ body { font-family: 'PT Sans', sans-serif; }
   }
 }
 
+.main-section{
+  margin:10px auto;
+  margin-top:15%;
+  padding: 0;
 
-.tituloM{
-  line-height: 1.5em;
-  color: rgb(43, 52, 70);/*rgb(216, 208, 208)*/
-  align-items: center;
-  font-size: 35px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular';
-  margin-left: 10px;
-  font-weight: bold;
 }
-#login form {
-  margin: auto;
-  padding: 22px 22px 22px 22px;
-  width: 100%;
+
+.modal-content{
+  background-color: #d8dee4;
+  opacity: .85;
+  padding: 0 0px;
+  box-shadow: px 0px 3px #848484;
+
+}
+.user-img{
+  margin-top: -50px;
+  margin-bottom: 35px;
+}
+
+.user-img img{
+  width: 100px;
+  height: 100px;
+  box-shadow: 0px 0px 3px #848484;
+  border-radius: 50%;
+}
+
+.form-group input{
+  height: 42px;
+  font-size: 18px;
+  border:0;
+  padding-left: 54px;
   border-radius: 5px;
-  background: #aac0ce; /*314252*/
-  border-top: 3px solid #434a52;
-  border-bottom: 3px solid #434a52;
-}
-#login form span {
-  background-color: #FDCB14; /*363b41*/
-  border-radius: 3px 0px 0px 3px;
-  border-right: 3px solid #434a52;
-  color: #606468;
-  display: block;
-  float: left;
-  line-height: 50px;
-  text-align: center;
-  width: 40px;
-  height: 45px;
-}
-#login form input[type="text"] {
-  background-color: #ebecde;
-  border-radius: 0px 3px 3px 0px;
-  color: #3a4b53;
-  margin-bottom: 1em;
-  padding: 0 16px;
-  width: 180px;
-  height: 45px;
 }
 
-#login form input[type="password"] {
-  background-color: #ebecde;
-  border-radius: 0px 3px 3px 0px;
-  color: #3a3636;
-  margin-bottom: 1em;
-  padding: 0 16px;
-  width: 180px;
-  height: 45px;
+.form-group::before{
+  font-family: "Font Awesome\ 5 Free";
+  position: absolute;
+  left: 28px;
+  font-size: 22px;
+  padding-top:4px;
 }
+.form-group#user-group::before{
+  content: "\f007";
+  color: rgb(19, 18, 18); 
+}
+
+.form-group#contrasena-group::before{
+  content: "\f023";
+  color: rgb(19, 18, 18); 
+}
+
 #login form input[type="submit"] {
-  background: #4a6688;
+  background: rgb(228, 187, 39);
   border: 0;
   width: 100%;
   height: 40px;
@@ -251,4 +262,11 @@ body { font-family: 'PT Sans', sans-serif; }
 }
 #login form input[type="submit"]:hover {
   background: #6b2c31;
-} 
+}
+.forgot{
+  padding: 5px 0;
+}
+
+.forgot a{
+  color: rgb(73, 70, 70);
+}

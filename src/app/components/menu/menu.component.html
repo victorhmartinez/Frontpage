@@ -9,7 +9,10 @@
                 </mat-form-field>
 
                 <mat-form-field class="w100">
-                    <input matInput formControlName="orden" placeholder="Orden" autocomplete="off">
+                  <input matInput formControlName="orden" placeholder="Orden" autocomplete="off">
+                </mat-form-field>
+                <mat-form-field class="w100">
+                    <input matInput formControlName="url" placeholder="Url" autocomplete="off">
                   </mat-form-field>
 
               <mat-form-field class="w100">
@@ -42,6 +45,10 @@
         <ng-container matColumnDef="orden">
           <mat-header-cell *matHeaderCellDef> Orden </mat-header-cell>
           <mat-cell *matCellDef="let menu"> {{menu.orden}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="url">
+          <mat-header-cell *matHeaderCellDef> Url </mat-header-cell>
+          <mat-cell *matCellDef="let menu"> {{menu.url}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="itemCategory">

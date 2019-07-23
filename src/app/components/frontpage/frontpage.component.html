@@ -1,4 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+<!--Menus-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="d-flex mx-auto mt-md-4">
 
@@ -26,34 +28,17 @@
         <!--Imageness-->
         <div class="swiper-wrapper">
           <!--CAROUSEL bootstrap-->
-          <ngb-carousel>
-            <ng-template ngbSlide>
-              <img src="https://www.fundaciontelefonica.com.ar/wp-content/uploads/2018/09/programming-1024x547.jpg"
-                alt="code-coding-computer-574071" />
-              <div class="carousel-caption">
-                <h2>Hola este es un mensaje</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Magnam accusamus veniam excepturi aliquid unde, vitae nostrum, vel. Ipsum, accusantium, dicta!.</p>
-              </div>
-            </ng-template>
-            <ng-template ngbSlide>
+          <ngb-carousel> 
+             
+            <ng-template ngbSlide *ngFor="let mensaje of listMensajes">
+                <ng-container >
               <img src="http://www.aprende-facilmente.com/wp-content/uploads/2016/11/angularjs-logo-1024x547.png"
                 alt="Random second slide">
-              <div class="carousel-caption">
-                <h2>Hola este es un mensaje 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Magnam accusamus veniam excepturi aliquid unde, vitae nostrum, vel. Ipsum, accusantium, dicta!</p>
+              <div class="carousel-caption" >
+                <h2>{{mensaje.title}}</h2>
+                <p> {{mensaje.description}}</p>
               </div>
-            </ng-template>
-            <ng-template ngbSlide>
-              <img
-                src="https://unioninformatica.org/wp-content/uploads/2017/02/plataformas-aprender-estudiar-union-informatica-1024x547.jpg"
-                alt="Random third slide" />
-              <div class="carousel-caption">
-                <h3>Hola este es un mensaje 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Magnam accusamus veniam excepturi aliquid unde, vitae nostrum, vel. Ipsum, accusantium, dicta!</p>
-              </div>
+            </ng-container>
             </ng-template>
           </ngb-carousel>
         </div>
@@ -108,7 +93,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-11 mx-auto">
-        <h2 class="titulo titulo-quienes-somos text-white">Departamentos</h2>
+        <h2 class="titulo titulo-quienes-somos text-white">Secciones</h2>
         <div class="row d-flex justify-content-around">
           <div class="col-md-3 box-departamento">
             <div class="text-center">
@@ -160,8 +145,7 @@
   </div>
 </section>
 
-
-
+<!--Autoridades-->
 <section id="autoridades">
   <div class="container-fluid">
     <div class="row">
@@ -196,26 +180,25 @@
     </div>
   </div>
 </section>
+<!--Testimonios-->
 <section id="grupos" class="bg-oscuro">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-11 mx-auto">
         <h2 class="titulo titulo-grupos text-white">Testimonios</h2>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12" >
             <div class="row">
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-md-6 px-0">
+              <div class="col-md-12"*ngFor=" let testimonios of listTestimonios;  let i=index">
+                <div class="row"*ngIf="i<1" >
+                  <div class="col-md-6 px-0" >
                     <div id="titu1" alt="" class="img-fluid"></div>
                   </div>
-                  <div class="col-md-6 d-flex bg-white">
+                  <div class="col-md-6 d-flex bg-white"  >
                     <div class="info my-auto">
-                      <h2 class="text-center">INVESTIGACIÓN</h2>
+                      <h2 class="text-center">{{testimonios.title}}</h2>
                       <hr class="bg-warning w-25">
-                      <p class="w-75 mx-auto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Fugit cupiditate doloribus doloremque! Voluptates reiciendis, cumque minima placeat saepe amet
-                        impedit.</p>
+                      <p class="w-75 mx-auto text-justify">{{testimonios.description}}.</p>
                       <div class="d-flex justify-content-center">
                         <a href="#" class="btn btn-warning">Leer más</a>
                       </div>
@@ -223,15 +206,13 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-12">
-                <div class="row">
-                  <div class="col-md-6 d-flex bg-white px-0">
-                    <div class="info my-auto">
-                      <h2 class="text-center">INVESTIGACIÓN</h2>
+              <div class="col-md-12"*ngFor=" let testimonios of listTestimonios;let i=index">
+                <div class="row" *ngIf="i>0 && i<2">
+                  <div class="col-md-6 d-flex bg-white px-0" >
+                    <div class="info my-auto" >
+                      <h2 class="text-center">{{testimonios.title}}</h2>
                       <hr class="bg-warning w-25">
-                      <p class="w-75 mx-auto text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Fugit cupiditate doloribus doloremque! Voluptates reiciendis, cumque minima placeat saepe amet
-                        impedit.</p>
+                      <p class="w-75 mx-auto text-justify">{{testimonios.description}}</p>
                       <div class="d-flex justify-content-center">
                         <a href="#" class="btn btn-warning">Leer más</a>
                       </div>
@@ -245,8 +226,13 @@
             </div>
           </div>
         </div>
+        <div class="d-flex justify-content-center">
+          <a href="#" class="btn btn-warning">Ver más</a>
+        </div>
       </div>
+      
     </div>
+   
   </div>
 </section>
 

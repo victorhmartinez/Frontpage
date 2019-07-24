@@ -1,9 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <!--Menus-->
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<router-outlet>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  
   <div class="d-flex mx-auto mt-md-4">
-
+     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,15 +13,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item active mr-2" *ngFor="let menu of  listMenu">
-          <a class="nav-link py-2 px-4" routerLink="/frontpage">{{menu.name}}<span class="sr-only">(current)</span></a>
+          <a class="nav-link py-2 px-4" routerLink="{{menu.url}}">{{menu.name}}<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active mr-2">
           <a class="nav-link py-2 px-4" (click)="open(content)" tabindex="-1" aria-disabled="true">Login</a>
         </li>
       </ul>
+      
     </div>
+    
   </div>
+
 </nav>
+</router-outlet>
 <!-- slider eventos y noticias  (click)="open(content)" -->
 <div class="container-fluid">
   <div class="row">
@@ -30,13 +36,13 @@
           <!--CAROUSEL bootstrap-->
           <ngb-carousel> 
              
-            <ng-template ngbSlide *ngFor="let mensaje of listMensajes">
+            <ng-template ngbSlide >
                 <ng-container >
               <img src="http://www.aprende-facilmente.com/wp-content/uploads/2016/11/angularjs-logo-1024x547.png"
                 alt="Random second slide">
               <div class="carousel-caption" >
-                <h2>{{mensaje.title}}</h2>
-                <p> {{mensaje.description}}</p>
+                <h2>Hola mensaje 1</h2>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro repudiandae iure nesciunt aperiam quae impedit minus soluta fugiat mollitia, deserunt earum, temporibus molestiae nulla. Sit placeat sed rerum cum omnis?</p>
               </div>
             </ng-container>
             </ng-template>
@@ -89,7 +95,7 @@
   </div>
 </section>
 <!-- Departamentos -->
-<section id="departamentos" class="bg-oscuro">
+<section id="departamentos" class="bg-primary">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-11 mx-auto">
@@ -171,7 +177,11 @@
             </div>
             <!-- boton-->
             <div class="d-flex justify-content-center">
-              <a href="#" class="btn btn-warning">Ver más</a>
+              
+              <button class="btn btn-warning" routerLink="autoridades">
+                 
+                  Ver más
+                </button>
             </div>
           </div>
 
@@ -181,7 +191,7 @@
   </div>
 </section>
 <!--Testimonios-->
-<section id="grupos" class="bg-oscuro">
+<section id="grupos" class="bg-primary">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-11 mx-auto">
@@ -192,7 +202,10 @@
               <div class="col-md-12"*ngFor=" let testimonios of listTestimonios;  let i=index">
                 <div class="row"*ngIf="i<1" >
                   <div class="col-md-6 px-0" >
-                    <div id="titu1" alt="" class="img-fluid"></div>
+                    <div >
+                        <iframe width="570" height="430" src="https://www.youtube.com/embed/sUhJwmuBzp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    </div>
                   </div>
                   <div class="col-md-6 d-flex bg-white"  >
                     <div class="info my-auto">
@@ -219,7 +232,10 @@
                     </div>
                   </div>
                   <div class="col-md-6 px-0">
-                    <div id="titu1" alt="" class="img-fluid"></div>
+                    <div >
+                        <iframe width="562" height="435" src="https://www.youtube.com/embed/sUhJwmuBzp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    </div>
                   </div>
                 </div>
               </div>
@@ -227,7 +243,7 @@
           </div>
         </div>
         <div class="d-flex justify-content-center">
-          <a href="#" class="btn btn-warning">Ver más</a>
+          <a routerLink="testimonios" class="btn btn-warning">Ver más</a>
         </div>
       </div>
       

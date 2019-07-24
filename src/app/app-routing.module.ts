@@ -21,6 +21,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { SubjectMatterComponent } from './components/subject-matter/subject-matter.component';
 import { PreRequirementsComponent } from './components/pre-requirements/pre-requirements.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { VermasAutoridadesComponent } from './components/vermas-autoridades/vermas-autoridades.component';
+import { VermasTestimoniosComponent } from './components/vermas-testimonios/vermas-testimonios.component';
 
 const routes: Routes = [
  
@@ -29,8 +31,12 @@ const routes: Routes = [
   
   { path: '', component: FrontpageComponent, pathMatch: 'full',},
  // { path: '', redirectTo: '/frontpage', pathMatch: 'full' },
-  { path: 'isic', component: FrontpageComponent },
-  { path: 'arquitectura', component: FrontpageComponent },
+  { path: 'isic', component: FrontpageComponent,children:[
+    {path:'autoridades', component:VermasAutoridadesComponent},
+    {path:'testimonios' , component:VermasTestimoniosComponent},
+  ]},
+ 
+ 
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },  
   
   { path: 'administracion', component: AdministracionComponent, canActivate: [AuthGuard]

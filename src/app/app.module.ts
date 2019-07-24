@@ -14,6 +14,7 @@ import { MaterialModule } from './material-module';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { CategoryComponent } from './components/category/category.component'
 
+
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { ItemcategoryComponent } from './components/itemcategory/itemcategory.component';
@@ -34,6 +35,8 @@ import { PreRequirementsComponent } from './components/pre-requirements/pre-requ
 import { MatPaginatorIntl } from '@angular/material';
 import { MatPaginatorIntlEspa } from './mat-paginator-intl-espa';
 import { MatMenuModule} from '@angular/material/menu';
+import { VermasTestimoniosComponent } from './components/vermas-testimonios/vermas-testimonios.component';
+import { VermasAutoridadesComponent } from './components/vermas-autoridades/vermas-autoridades.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,8 @@ import { MatMenuModule} from '@angular/material/menu';
     InfositeComponent,
     SubjectMatterComponent,
     PreRequirementsComponent,
+    VermasTestimoniosComponent,
+    VermasAutoridadesComponent,
  
   ],
   imports: [

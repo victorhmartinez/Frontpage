@@ -37,6 +37,7 @@ import { MatPaginatorIntlEspa } from './mat-paginator-intl-espa';
 import { MatMenuModule} from '@angular/material/menu';
 import { VermasTestimoniosComponent } from './components/vermas-testimonios/vermas-testimonios.component';
 import { VermasAutoridadesComponent } from './components/vermas-autoridades/vermas-autoridades.component';
+import { VermasMensajesComponent } from './components/vermas-mensajes/vermas-mensajes.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { VermasAutoridadesComponent } from './components/vermas-autoridades/verm
     PreRequirementsComponent,
     VermasTestimoniosComponent,
     VermasAutoridadesComponent,
+    VermasMensajesComponent,
  
   ],
   imports: [

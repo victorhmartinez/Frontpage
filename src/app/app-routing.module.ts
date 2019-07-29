@@ -23,6 +23,7 @@ import { PreRequirementsComponent } from './components/pre-requirements/pre-requ
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { VermasAutoridadesComponent } from './components/vermas-autoridades/vermas-autoridades.component';
 import { VermasTestimoniosComponent } from './components/vermas-testimonios/vermas-testimonios.component';
+import { VermasMensajesComponent } from './components/vermas-mensajes/vermas-mensajes.component';
 
 const routes: Routes = [
  
@@ -34,7 +35,7 @@ const routes: Routes = [
   { path: 'isic', component: FrontpageComponent},
   {path:'autoridades', component:VermasAutoridadesComponent},
   {path:'testimonios' , component:VermasTestimoniosComponent},
- 
+  {path:'mensajes' , component:VermasMensajesComponent},
  
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },  
   

@@ -69,9 +69,7 @@ body { font-family: 'PT Sans', sans-serif; }
 
 .swiper-pagination-bullet-active { background-color: #FDCB14 }
 
-#evento1 { background-image: url('../../../../images/company-concept-creative-7369.jpg') }
-#evento2 { background-image: url('../../../../images/widdisonphotography_0023-900x720.jpg') }
-#evento3 { background-image: url('../../../../images/tj-jen-presenting.jpg') }
+
 
 .imagen-evento {
   height: 13rem;

@@ -39,7 +39,7 @@
             <ng-container *ngFor="let mensaje of listMensajes;  let i=index">
               <ng-template ngbSlide *ngIf="i<3">
                 <img
-                  src="https://unioninformatica.org/wp-content/uploads/2017/02/plataformas-aprender-estudiar-union-informatica-1024x547.jpg"
+                  src="https://scontent.fuio13-1.fna.fbcdn.net/v/t31.0-8/27624973_10156301175060921_3441525261015536028_o.jpg?_nc_cat=110&_nc_oc=AQkZO6s6EW35Ekf7-jVULF_NVRp99iWvjApbdKLedmn3XR-CCiDDy1wWAjfT7uO_kAQ&_nc_ht=scontent.fuio13-1.fna&oh=0150f4672f5e69e27f2d81cd8f9c2568&oe=5DEDD783"
                   alt="Random third slide" />
                 <div class="carousel-caption" >
                   <h3>{{mensaje.title}}</h3>
@@ -47,13 +47,13 @@
                 </div>
               </ng-template>
             </ng-container>
-          </ngb-carousel>
-
+          </ngb-carousel><br>
+          <div class="d-flex justify-content-center">
+            <a routerLink="/mensajes" class="btn btn-warning">Ver más</a>
+          </div>
         </div>
         <br>
-      <div class="d-flex justify-content-center">
-        <a routerLink="/mensajes" class="btn btn-warning">Ver más</a>
-      </div>
+      
         <!--<div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>-->
         <div class="swiper-pagination d-flex justify-content-start ml-5"></div>
@@ -61,7 +61,7 @@
     </div>
     <div class="mt-3 mt-md-0 col-md-4 col-lg-3" >
       <div class="row"*ngFor="let mensaje of listMensajes;  let i=index" >
-        <div class="col-sm-12 px-0 imagen-evento d-flex align-items-end" id="evento2"  *ngIf="i<3">
+        <div class="col-sm-12 px-0 imagen-evento d-flex align-items-end" id="evento2"  *ngIf="i>2 && i<6">
           <h3 class="mb-0 box-evento p-1">{{mensaje.title}}</h3>
         </div>
         <!--<div class="col-sm-12 px-0 mt-3 imagen-evento d-flex align-items-end" id="evento2">
@@ -72,8 +72,9 @@
         </div>-->
 
       </div>
+      
     </div>
-
+    
   </div>
 </div>
 <!-- ¿Quienes sómos? -->
@@ -92,7 +93,14 @@
           <div class="col-md-6 d-flex align-items-center">
             <blockquote>
               <ng-container *ngFor="let infosite of  listInfoSitesQuienesSomos; last as isLast">
-                <p class="mb-0 text-gray text-justify texto-cita" *ngIf="isLast">{{infosite.description}}</p>
+                  <blockquote *ngIf="isLast">
+                      <p class="mb-0 text-gray text-justify texto-cita" >{{infosite.description}}</p>
+                      <footer class="blockquote-footer float-right"><cite title="Source Title">Fernanda Maricela Soto</cite>
+                      </footer>
+    
+                     
+                  </blockquote>
+                
               </ng-container>
 
             </blockquote>
@@ -116,8 +124,9 @@
             <hr class="bg-warning">
             <div>
               <h4 class="titulo4 text-white text-center">Dpto. Tecnologías avanzadas de la web</h4>
-              <p class="mt-3 mb-0 text-center text-gray texto-departamento">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Quos magni quis ratione delectus ab dolorum quia sit, laboriosam suscipit natus.</p>
+              <p class="mt-3 mb-0 text-center text-gray texto-departamento">Este departamento consta de personal calificado para 
+                el diseño e implementacion de sitios orientados a la web.
+              Entre el personal tenemos a jovenes estudiantes</p>
               <div class="d-flex justify-content-center">
                 <a href="#" class="btn btn-warning btn-departamento">Ver más</a>
               </div>
@@ -131,8 +140,9 @@
             <hr class="bg-warning">
             <div>
               <h4 class="titulo4 text-white text-center">Dpto. Ingeniería de Software y GTI</h4>
-              <p class="mt-3 mb-0 text-center text-gray texto-departamento">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Quos magni quis ratione delectus ab dolorum quia sit, laboriosam suscipit natus.</p>
+              <p class="mt-3 mb-0 text-center text-gray texto-departamento">Este departamento se encuentra en el edificio de la UGTI del campus UTPL.
+                Encargado del desarrollo de sistemas informaticos
+              </p>
               <div class="d-flex justify-content-center">
                 <a href="#" class="btn btn-warning btn-departamento">Ver más</a>
               </div>
@@ -145,11 +155,11 @@
             <hr class="bg-warning">
             <div>
               <h4 class="titulo4 text-white text-center">Dpto. Ingeniería Artificial</h4>
-              <p class="mt-3 mb-0 text-center text-gray texto-departamento">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Quos magni quis ratione delectus ab dolorum quia sit, laboriosam suscipit natus.</p>
-              <div class="d-flex justify-content-center">
-                <a href="#" class="btn btn-warning">Ver más</a>
-              </div>
+              <p class="mt-3 mb-0 text-center text-gray texto-departamento">Este departamento se encarga del estudio de la automatizacion de procesos 
+                que buscan eliminar contratiempo de parte de procesos manuales.</p>
+                <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-warning btn-departamento">Ver más</a>
+                  </div>
             </div>
           </div>
 
@@ -282,7 +292,7 @@
           </div>
         </form>
         <div class="col-12 forgot">
-          <a href="#">Recordar contrasena?</a>
+          <a href="#">Recordar contraseña?</a>
         </div>
       </div>
     </div>

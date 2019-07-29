@@ -31,10 +31,9 @@ const routes: Routes = [
   
   { path: '', component: FrontpageComponent, pathMatch: 'full',},
  // { path: '', redirectTo: '/frontpage', pathMatch: 'full' },
-  { path: 'isic', component: FrontpageComponent,children:[
-    {path:'autoridades', component:VermasAutoridadesComponent},
-    {path:'testimonios' , component:VermasTestimoniosComponent},
-  ]},
+  { path: 'isic', component: FrontpageComponent},
+  {path:'autoridades', component:VermasAutoridadesComponent},
+  {path:'testimonios' , component:VermasTestimoniosComponent},
  
  
   { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },  

@@ -11,6 +11,10 @@ body { font-family: 'PT Sans', sans-serif; }
 
 .bg-primary { background-color: #003F72 !important; }
 .bg-warning { background-color: #FDCB14 !important; }
+.bg-warning2 { 
+  background-color: #003F72 !important;
+  border: solid #003F72; 
+}
 .bg-oscuro { background-color: #151515 !important; }
 .bg-gris { background-color: #9B9B9B !important; }
 
@@ -19,20 +23,28 @@ body { font-family: 'PT Sans', sans-serif; }
 .text-gray { color: #9B9B9B }
 .text-oscuro { color: #151515 }
 
+/*para fondo menu talvez*/
 .navbar { padding: 30px 15px; 
-background: rgb(12, 128, 223)}
+  padding-top: 0rem;
+background: rgb(192, 197, 201)}
 
 .navbar-nav .active {
   background-color: #FDCB14;
+  font-weight: bold;
+  border-radius: 18px;
 }
 
 .nav-link {
   font-weight: 700;
-  border: 2px solid #fff;
+  border: 3px solid #FDCB14;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  
 }
 
 
-.nav-link:hover { border: 2px solid #f5f5f5; }
+.nav-link:hover { border: 3px solid #646c85; }
 
 .linea { height: 3px; }
 
@@ -272,3 +284,18 @@ background: rgb(12, 128, 223)}
 .forgot a{
   color: rgb(73, 70, 70);
 }
+
+
+#nuevo {
+  padding-top:2rem;
+  padding-bottom: 2rem;
+	font-size: 12px;
+	font-family: sans-serif;
+  background: #2c3e50;
+  position: relative;
+  width: 100%;
+  left: 0;
+
+}
+
+
